@@ -6,9 +6,13 @@ sudo vi /etc/sudoers. Add line : jenkins ALL=NOPASSWD:/path of script/
 Permissions in visudo jenkins ALL=(ALL) NOPASSWD: ALL
 
 # Build AMI using Packer
-
+```
+https://github.com/krishnamaram2025/Packer
+```
 # Create Instance using Terraform
-
+```
+https://github.com/krishnamaram2025/Terraform
+```
 # Manual: Install and configure software packages for Jenkins
 * Step 1: install wget utility to download packages
 ```
