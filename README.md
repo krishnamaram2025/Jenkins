@@ -13,6 +13,12 @@ https://github.com/krishnamaram2025/Packer
 ```
 https://github.com/krishnamaram2025/Terraform
 ```
+# Install and set up Jenkins server using Ansible
+```
+https://github.com/krishnamaram2025/Ansible
+```
+# Manage Jenkins using Python Automation
+
 # Manual: Install and configure software packages for Jenkins
 * Step 1: install wget utility to download packages
 ```
@@ -33,9 +39,3 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 ```
 
-
-# Install and set up Jenkins server using Ansible
-```
-git clone https://github.com/krishnamaram2025/Jenkins.git && cd Jenkins && ansible-playbook ansible jenkins.yml
-```
-# Manage Jenkins using Python Automation
