@@ -4,10 +4,10 @@ This module is to perform jenkins operation using jenkins API
 
 import requests
 import os
+import json
 # from custom_logger.logging import CustomLogger
 
 # logger = CustomLogger()
-JENKINS_SERVER = 'http://52.91.25.79:8080'
 
 
 class JenkinsTrigger:
@@ -60,3 +60,24 @@ class JenkinsTrigger:
             print(f"Unsuporrted Method {method} for URL {url}")
             raise
         return response
+
+if __name__ == '__main__':
+    JENKINS_SERVER = os.environ['JENKINS_SERVER']
+    # url = 
+    # params = ""
+    # JenkinsTrigger.trigger_build(url, method='POST', params=params)   
+    #  print(f"Started provisioning cluster and payload {input_payload}")
+    BUILD_URL = f'{JENKINS_SERVER}/job/CSF/job/buildWithParameters'
+    input_payload = { 
+    "cloud_provider": "aws",
+    "myregion" : "us-east-1",
+    "mycidr" : "10.0.0.0/16",
+    "myami" : "ami-002070d43b0a4f171", 
+    "mypublickey" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDkMw6K8asfk1eAWDse2FykRZobqtBHZ+XEKI5L4N42CqbzFVlgW8pzR60yAqzsXZLlc8zDVXpZr2fX1ft/aF6RWDod/EvTGC+9fnvZyZVdVOCje0NK6C8ABgiIY1srQtX9R0oT2OqXySbt/POGRihSGMmmCuxWMQjZCqZmS5J66Vm3D0+hihkqThDOa07izrHCLMHERo+dIKbX8hmFvlPq5j1HFGXuWzkkWJaD3+xHT8Ao56lEPrB7NNyvlnlvGH1JO8qWfEk/CuEN10v5K1wjf8W3dLu6vtEgG2BcGDm37KYoF+Y0+l9z0g5OsKAhBG7KM21nMTcEGEUd6nCQMHo3QHN2zlzq6NMy6XSK06trNaJovuuDST44iM9XAX3A+HkyiNqgNIzazVae5XtRdBAPFB/KMZkBclx8Nm8JPUXKwWIGwmmFfWxilhdC2rr1BKChIEdzGNrw6KydLItDz+DW/ajeI5JT2/x6NKj2Epz3NEsQ4a37EIWXzmY6HCrHJrs= Krishna@krish"
+}
+
+    params = {
+        "CLUSTER_DATA": '"' + json.dumps(input_payload).replace('"', '\\"') + '"'
+    }
+    print("params", params)
+    request = JenkinsTrigger.trigger_build(url= BUILD_URL, method='POST', params=params)

@@ -73,3 +73,8 @@ sudo systemctl enable jenkins
 ```
 
 # Manage Jenkins using Python Automation
+```
+export JENKINS_SERVER=http://IP:8080
+export JENKINS_USR=
+export JENKINS_PWD=
+```
