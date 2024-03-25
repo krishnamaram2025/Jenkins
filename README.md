@@ -6,11 +6,16 @@ This project is intended to get hands on CICD tool Jenkins.
 ```
 jenkins ALL=(ALL) NOPASSWD: ALL
 ```
-* Step 2: Export Env variables
+* Step 2: Token Jeneration
+```
+Jenkins UI => click on profile right side => Configure => create token
+```
+* Step 3: Export Env variables
 ```
 export JENKINS_SERVER=http://IP:8080
 export JENKINS_USR=
 export JENKINS_PWD=
+export JENKINS_TOKEN=
 ```
 
 # Execution Flow
