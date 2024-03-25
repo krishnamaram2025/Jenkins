@@ -12,10 +12,9 @@ Jenkins UI => click on profile right side => Configure => create token
 ```
 * Step 3: Export Env variables
 ```
-export JENKINS_SERVER=http://IP:8080
-export JENKINS_USR=
-export JENKINS_PWD=
-export JENKINS_TOKEN=
+export JENKINS_SERVER="http://IP:8080"
+export JENKINS_USR=""
+export JENKINS_TOKEN=""
 ```
 
 # Execution Flow
